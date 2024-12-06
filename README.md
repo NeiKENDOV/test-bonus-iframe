@@ -1,3 +1,6 @@
+# В HelloWorld.vue добавьте ссылку с токеном и проверяйте
+
+
 # test-bonus-iframe
 
 ## Project setup
