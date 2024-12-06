@@ -27,30 +27,11 @@
         >
       </li>
     </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
+    <iframe
+      src="TODO СЮДА ВСТАВЬТЕ ССЫЛКУ НА БОНУС"
+      width="400"
+      height="800"
+    ></iframe>
     <h3>Ecosystem</h3>
     <ul>
       <li>
@@ -91,6 +72,18 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  methods: {
+    receiveMessage(event) {
+      console.log("INFO FROM IFRAME:");
+      console.log(event.data);
+    },
+  },
+  mounted() {
+    window.addEventListener("message", this.receiveMessage);
+  },
+  beforeUnmount() {
+    window.removeEventListener("message", this.receiveMessage);
   },
 };
 </script>
